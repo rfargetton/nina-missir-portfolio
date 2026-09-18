@@ -5,7 +5,7 @@ Site vitrine multi-pages pour **Nina Missir** — peintre muraliste & illustratr
 ## Dépôt
 
 ```bash
-git clone https://github.com/romaric-fargetton/nina-missir-portfolio.git
+git clone https://github.com/rfargetton/nina-missir-portfolio.git
 cd nina-missir-portfolio
 ```
 
@@ -40,7 +40,7 @@ npm run dev      # http://localhost:43124
 
 ## Déploiement Netlify
 
-1. Connecter le dépôt [romaric-fargetton/nina-missir-portfolio](https://github.com/romaric-fargetton/nina-missir-portfolio) (branche `main`)
+1. Connecter le dépôt [rfargetton/nina-missir-portfolio](https://github.com/rfargetton/nina-missir-portfolio) (branche `main`)
 2. Build : `npm run build` — Publish : `_site`
 3. Activer **Netlify Identity**, puis **Git Gateway** (Settings → Access control → Identity → Services)
 

@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  repo: romaric-fargetton/nina-missir-portfolio
+  repo: rfargetton/nina-missir-portfolio
 
 local_backend: true
 
