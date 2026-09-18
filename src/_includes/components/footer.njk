@@ -1,0 +1,33 @@
+<footer class="bg-bark text-sand py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="font-serif font-semibold text-white text-xl mb-4">{{ site.title }}</h3>
+        <p class="text-sm">{{ site.description }}</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white mb-4">Services</h3>
+        <ul class="space-y-2">
+          {% for service in collections.services %}
+            <li>
+              <a href="{{ service.url }}" class="text-sm hover:text-white transition-colors">{{ service.data.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white mb-4">Contact</h3>
+        <p class="text-sm">{{ site.phone }}</p>
+        <p class="text-sm"><a href="mailto:{{ site.email }}" class="hover:text-white">{{ site.email }}</a></p>
+        <p class="text-sm">{{ site.address }}</p>
+        {% if site.linkedin %}
+          <p class="text-sm mt-2"><a href="{{ site.linkedin }}" class="hover:text-white" target="_blank" rel="noopener">LinkedIn</a></p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <p>&copy; {{ "now" | date("YYYY") }} {{ site.title }}. Tous droits réservés.</p>
+      <a href="/mentions-legales/" class="hover:text-white">Mentions légales</a>
+    </div>
+  </div>
+</footer>

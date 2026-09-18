@@ -1,0 +1,35 @@
+---
+layout: base.njk
+---
+
+<header class="bg-gradient-to-r from-bark to-primary text-white py-16">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">{{ title }}</h1>
+    <p class="text-xl text-sand max-w-2xl">{{ description }}</p>
+  </div>
+</header>
+
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="mb-12 flex flex-wrap gap-3 justify-center">
+      <a href="#" data-filter="all" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">Tous les projets</a>
+      {% for service in collections.services %}
+        <a href="#" data-filter="{{ service.data.slug }}" class="px-6 py-2 bg-sand text-bark rounded-full hover:bg-sand/80 transition-colors">
+          {{ service.data.title }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+      {% for project in collections.projects %}
+        {% include "components/project-card.njk" %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-12">
+      <button id="load-more" type="button" class="btn-primary hidden">Charger plus de projets</button>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/projects-filter.js"></script>

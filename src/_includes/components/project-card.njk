@@ -1,0 +1,15 @@
+<a href="{{ project.url }}" data-project-card data-services="{{ project.data.services | join(',') }}"
+   class="group block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow bg-white">
+  <div class="overflow-hidden h-64 bg-sand">
+    {% if project.data.image %}
+      <img src="{{ project.data.image }}" alt="{{ project.data.title }}"
+           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+    {% else %}
+      <div class="w-full h-full bg-gradient-to-br from-primary to-moss"></div>
+    {% endif %}
+  </div>
+  <div class="p-4">
+    <h3 class="font-serif font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{{ project.data.title }}</h3>
+    <p class="text-sm text-bark/60">{{ project.data.date | date("MMMM YYYY") }}{% if project.data.location %} · {{ project.data.location }}{% endif %}</p>
+  </div>
+</a>

@@ -1,0 +1,68 @@
+---
+layout: base.njk
+---
+
+<article>
+  <header class="bg-gradient-to-r from-bark to-primary text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap gap-4 text-sm text-sand mb-4">
+        <span>{{ date | date("DD MMMM YYYY") }}</span>
+        {% if location %}<span>{{ location }}</span>{% endif %}
+        {% for serviceSlug in services %}
+          {% set service = collections.services | findBySlug(serviceSlug) %}
+          {% if service %}
+            <a href="{{ service.url }}" class="badge bg-white/20 text-white hover:bg-white/30 transition-colors">
+              {{ service.data.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <h1 class="text-4xl md:text-5xl font-serif font-bold">{{ title }}</h1>
+    </div>
+  </header>
+
+  {% if image %}
+    <div class="relative h-72 md:h-[500px] overflow-hidden">
+      <img src="{{ image }}" alt="{{ title }}" class="w-full h-full object-cover">
+    </div>
+  {% endif %}
+
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="prose prose-lg max-w-4xl mx-auto">
+        {{ content | safe }}
+      </div>
+    </div>
+  </section>
+
+  {% if gallery and gallery.length > 0 %}
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-serif font-bold mb-8">Galerie</h2>
+        {% include "components/gallery.njk" %}
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-serif font-bold mb-8">Autres projets</h2>
+      {% set firstService = services[0] %}
+      {% if firstService %}
+        {% set similarProjects = collections.projectsByService[firstService] %}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {% set count = 0 %}
+          {% for p in similarProjects %}
+            {% if p.url != page.url and count < 3 %}
+              {% set project = p %}
+              {% set count = count + 1 %}
+              {% include "components/project-card.njk" %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {% include "components/cta-contact.njk" %}
+</article>

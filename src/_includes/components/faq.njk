@@ -1,0 +1,11 @@
+<div class="space-y-4">
+  {% for item in faq %}
+    <details class="border border-sand rounded-lg p-6 cursor-pointer hover:bg-white bg-cream/50">
+      <summary class="font-semibold text-lg flex justify-between items-center list-none">
+        {{ item.question }}
+        <span class="text-primary text-2xl leading-none">+</span>
+      </summary>
+      <p class="text-bark/70 mt-4">{{ item.answer }}</p>
+    </details>
+  {% endfor %}
+</div>

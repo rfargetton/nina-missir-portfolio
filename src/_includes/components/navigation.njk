@@ -1,0 +1,9 @@
+<nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:items-center gap-4 md:gap-8 absolute md:static top-full left-0 right-0 bg-cream md:bg-transparent border-b md:border-0 border-sand p-4 md:p-0">
+  <a href="/" class="text-bark/80 hover:text-primary transition-colors">Accueil</a>
+  <a href="/qui-sommes-nous/" class="text-bark/80 hover:text-primary transition-colors">Qui sommes-nous ?</a>
+  {% for service in collections.services %}
+    <a href="{{ service.url }}" class="text-bark/80 hover:text-primary transition-colors">{{ service.data.title }}</a>
+  {% endfor %}
+  <a href="/tous-les-projets/" class="text-bark/80 hover:text-primary transition-colors">Projets</a>
+  <a href="/contact/" class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-primary/90 transition-colors text-center">Contact</a>
+</nav>

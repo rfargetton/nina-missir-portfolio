@@ -1,0 +1,12 @@
+<a href="{{ service.url }}" class="group block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all bg-white">
+  {% if service.data.image %}
+    <div class="overflow-hidden h-56">
+      <img src="{{ service.data.image }}" alt="{{ service.data.title }}"
+           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+    </div>
+  {% endif %}
+  <div class="p-6">
+    <h3 class="font-serif font-semibold text-xl mb-3 group-hover:text-primary transition-colors">{{ service.data.title }}</h3>
+    <p class="text-bark/70 text-sm">{{ service.data.description }}</p>
+  </div>
+</a>

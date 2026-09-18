@@ -1,0 +1,112 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+site_url: https://nina-missir.netlify.app
+logo_url: /assets/images/brand/logo.svg
+
+publish_mode: editorial_workflow
+media_folder: "src/assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "📄 Pages"
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    filter: { field: "draft", value: false }
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+      - { label: "Brouillon", name: "draft", widget: "boolean", default: false }
+
+  - name: "services"
+    label: "🎨 Services"
+    folder: "src/content/services"
+    create: false
+    slug: "{{slug}}"
+    filter: { field: "extension", value: "md" }
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL de la page (ex: decor-vitrine)" }
+      - { label: "Ordre menu", name: "order", widget: "number" }
+      - { label: "Description courte", name: "description", widget: "text" }
+      - { label: "Image couverture", name: "image", widget: "image" }
+      - { label: "Présentation complète", name: "body", widget: "markdown" }
+      - label: "FAQ"
+        name: "faq"
+        widget: "list"
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Réponse", name: "answer", widget: "text" }
+
+  - name: "projects"
+    label: "🖼️ Projets"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Service(s)"
+        name: "services"
+        widget: "relation"
+        collection: "services"
+        search_fields: ["title"]
+        value_field: "slug"
+        display_fields: ["title"]
+        multiple: true
+      - { label: "Description courte", name: "description", widget: "text" }
+      - { label: "Image couverture", name: "image", widget: "image" }
+      - label: "Galerie images"
+        name: "gallery"
+        widget: "list"
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Description", name: "alt", widget: "string" }
+      - { label: "Contenu détaillé", name: "body", widget: "markdown" }
+
+  - name: "testimonials"
+    label: "⭐ Témoignages"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom client", name: "name", widget: "string" }
+      - { label: "Entreprise", name: "company", widget: "string" }
+      - { label: "Fonction", name: "role", widget: "string" }
+      - { label: "Citation", name: "quote", widget: "text" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "settings"
+    label: "⚙️ Paramètres"
+    files:
+      - name: "site"
+        label: "Configuration du site"
+        file: "src/_data/site.json"
+        format: "json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "URL du site", name: "url", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "phone", widget: "string" }
+          - { label: "Adresse", name: "address", widget: "string" }
+
+      - name: "navigation"
+        label: "Menu principal"
+        file: "src/_data/navigation.json"
+        format: "json"
+        fields:
+          - label: "Éléments du menu"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Ordre", name: "order", widget: "number" }

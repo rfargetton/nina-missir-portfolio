@@ -1,0 +1,9 @@
+<div class="gallery grid grid-cols-2 md:grid-cols-3 gap-4">
+  {% for item in gallery %}
+    <figure class="overflow-hidden rounded-lg cursor-pointer group">
+      <img src="{{ item.image }}" alt="{{ item.alt }}"
+           class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+           data-lightbox="gallery">
+    </figure>
+  {% endfor %}
+</div>
