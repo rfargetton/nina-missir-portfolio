@@ -6,11 +6,12 @@
   <title>Administration — Nina Missir</title>
 </head>
 <body>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     if (window.netlifyIdentity && /invite_token|confirmation_token|recovery_token|email_change_token/.test(window.location.hash)) {
-      window.netlifyIdentity.open();
+      window.netlifyIdentity.on("init", function () {
+        window.netlifyIdentity.open();
+      });
     }
   </script>
 </body>
