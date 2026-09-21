@@ -5,7 +5,7 @@ backend:
 
 local_backend: true
 
-site_url: https://nina-missir.netlify.app
+site_url: https://ninamissir.netlify.app
 logo_url: /assets/images/brand/logo.svg
 
 publish_mode: editorial_workflow
