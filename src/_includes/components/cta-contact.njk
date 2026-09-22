@@ -1,9 +1,9 @@
 <section class="py-20 bg-primary text-white">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Vous avez un projet en tête ?</h2>
-    <p class="text-lg text-sand mb-8">Fresque, vitrine ou illustration — parlons-en.</p>
+    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">{{ cta_title or "Vous avez un projet en tête ?" }}</h2>
+    <p class="text-lg text-sand mb-8">{{ cta_subtitle or "Fresque, vitrine ou illustration — parlons-en." }}</p>
     <a href="/contact/" class="inline-block bg-white text-primary hover:bg-cream px-8 py-4 rounded-lg font-semibold transition-colors">
-      Demander un devis gratuit
+      {{ cta_button_label or "Demander un devis gratuit" }}
     </a>
   </div>
 </section>

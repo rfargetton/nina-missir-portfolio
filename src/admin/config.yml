@@ -44,6 +44,28 @@ collections:
           - { label: "Question", name: "question", widget: "string" }
           - { label: "Réponse", name: "answer", widget: "text" }
 
+  - name: "homepage"
+    label: "🏠 Accueil"
+    files:
+      - name: "home"
+        label: "Contenu de la page d'accueil"
+        file: "src/content/homepage.md"
+        fields:
+          - { label: "Accroche", name: "eyebrow", widget: "string" }
+          - { label: "Titre principal", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Texte bouton principal", name: "hero_cta1_label", widget: "string" }
+          - { label: "Texte bouton secondaire", name: "hero_cta2_label", widget: "string" }
+          - { label: "Titre section Services", name: "services_title", widget: "string" }
+          - { label: "Sous-titre section Services", name: "services_subtitle", widget: "text" }
+          - { label: "Titre section Projets", name: "projects_title", widget: "string" }
+          - { label: "Sous-titre section Projets", name: "projects_subtitle", widget: "text" }
+          - { label: "Texte bouton Projets", name: "projects_cta_label", widget: "string" }
+          - { label: "Titre section Témoignages", name: "testimonials_title", widget: "string" }
+          - { label: "Titre bloc contact", name: "cta_title", widget: "string" }
+          - { label: "Sous-titre bloc contact", name: "cta_subtitle", widget: "text" }
+          - { label: "Texte bouton contact", name: "cta_button_label", widget: "string" }
+
   - name: "projects"
     label: "🖼️ Projets"
     folder: "src/content/projects"
@@ -107,6 +129,12 @@ collections:
             name: "items"
             widget: "list"
             types:
+              - label: "Accueil"
+                name: "home"
+                widget: "object"
+                fields:
+                  - { label: "Titre", name: "title", widget: "string", default: "Accueil" }
+                  - { label: "Ordre", name: "order", widget: "number" }
               - label: "Page"
                 name: "page"
                 widget: "object"

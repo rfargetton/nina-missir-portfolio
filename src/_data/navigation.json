@@ -1,6 +1,6 @@
 {
   "items": [
-    { "type": "page", "title": "Accueil", "reference": "/", "order": 1 },
+    { "type": "home", "title": "Accueil", "order": 1 },
     { "type": "page", "title": "Qui sommes-nous ?", "reference": "/qui-sommes-nous/", "order": 2 },
     { "type": "service", "title": "Peintures murales", "reference": "peintures-murales", "order": 3 },
     { "type": "service", "title": "Décors de vitrines", "reference": "decor-vitrine", "order": 4 },
