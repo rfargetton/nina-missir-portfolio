@@ -1,11 +1,40 @@
 {
   "items": [
-    { "type": "home", "title": "Accueil", "order": 1 },
-    { "type": "page", "title": "Qui sommes-nous ?", "reference": "/qui-sommes-nous/", "order": 2 },
-    { "type": "service", "title": "Peintures murales", "reference": "peintures-murales", "order": 3 },
-    { "type": "service", "title": "Décors de vitrines", "reference": "decor-vitrine", "order": 4 },
-    { "type": "service", "title": "Dessin et illustration", "reference": "dessin-illustration", "order": 5 },
-    { "type": "page", "title": "Projets", "reference": "/tous-les-projets/", "order": 10 },
-    { "type": "page", "title": "Contact", "reference": "/contact/", "order": 11 }
+    {
+      "type": "page",
+      "title": "Qui sommes-nous ?",
+      "reference": "/qui-sommes-nous/",
+      "order": 2
+    },
+    {
+      "type": "service",
+      "title": "Peintures murales",
+      "reference": "peintures-murales",
+      "order": 3
+    },
+    {
+      "type": "service",
+      "title": "Décors de vitrines",
+      "reference": "decor-vitrine",
+      "order": 4
+    },
+    {
+      "type": "service",
+      "title": "Dessin et illustration",
+      "reference": "dessin-illustration",
+      "order": 5
+    },
+    {
+      "type": "page",
+      "title": "Projets",
+      "reference": "/tous-les-projets/",
+      "order": 10
+    },
+    {
+      "type": "page",
+      "title": "Contact",
+      "reference": "/contact/",
+      "order": 11
+    }
   ]
 }
