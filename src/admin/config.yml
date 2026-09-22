@@ -106,7 +106,30 @@ collections:
           - label: "Éléments du menu"
             name: "items"
             widget: "list"
-            fields:
-              - { label: "Titre", name: "title", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
-              - { label: "Ordre", name: "order", widget: "number" }
+            types:
+              - label: "Page"
+                name: "page"
+                widget: "object"
+                fields:
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - label: "Page cible"
+                    name: "reference"
+                    widget: "relation"
+                    collection: "pages"
+                    search_fields: ["title"]
+                    value_field: "permalink"
+                    display_fields: ["title"]
+                  - { label: "Ordre", name: "order", widget: "number" }
+              - label: "Service"
+                name: "service"
+                widget: "object"
+                fields:
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - label: "Service cible"
+                    name: "reference"
+                    widget: "relation"
+                    collection: "services"
+                    search_fields: ["title"]
+                    value_field: "slug"
+                    display_fields: ["title"]
+                  - { label: "Ordre", name: "order", widget: "number" }
