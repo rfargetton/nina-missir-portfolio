@@ -3,6 +3,7 @@ layout: page.njk
 title: Mentions légales
 description: Informations légales du site Nina Missir.
 permalink: /mentions-legales/
+draft: false
 ---
 
 ## Éditeur du site

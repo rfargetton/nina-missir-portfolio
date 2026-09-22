@@ -3,6 +3,7 @@ layout: page.njk
 title: Qui sommes-nous ?
 description: Artiste nantaise, Nina Missir développe depuis 2016 un travail de peinture murale nourri par la nature et les textures.
 permalink: /qui-sommes-nous/
+draft: false
 ---
 
 ## Nina Missir, peintre muraliste & illustratrice
