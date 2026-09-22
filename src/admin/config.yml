@@ -28,9 +28,8 @@ collections:
   - name: "services"
     label: "🎨 Services"
     folder: "src/content/services"
-    create: false
+    create: true
     slug: "{{slug}}"
-    filter: { field: "extension", value: "md" }
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string", hint: "URL de la page (ex: decor-vitrine)" }
